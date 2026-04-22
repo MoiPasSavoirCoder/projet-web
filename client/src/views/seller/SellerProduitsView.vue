@@ -148,7 +148,7 @@ onMounted(charger);
 </script>
 
 <template>
-  <header class="head">
+  <header class="u-hrow">
     <h2>Mes produits</h2>
     <Button label="Ajouter" icon="pi pi-plus" @click="ouvrirCreation" :disabled="mesEntreprises.length === 0" />
   </header>
@@ -177,35 +177,35 @@ onMounted(charger);
   </DataTable>
 
   <Dialog v-model:visible="dialogVisible" :header="editing ? 'Modifier le produit' : 'Nouveau produit'" modal style="width: 36rem">
-    <div class="form">
-      <div v-if="!editing" class="field">
+    <div class="u-form">
+      <div v-if="!editing" class="u-field">
         <label>Entreprise</label>
         <Select v-model="form.entreprise_id" :options="mesEntreprises" option-label="nom" option-value="id" placeholder="Choisir…" />
       </div>
-      <div class="field">
+      <div class="u-field">
         <label>Nom</label>
         <InputText v-model="form.nom" />
       </div>
-      <div class="field">
+      <div class="u-field">
         <label>Description</label>
         <Textarea v-model="form.description" rows="2" />
       </div>
-      <div class="row">
-        <div class="field">
+      <div class="u-row">
+        <div class="u-field">
           <label>Nature</label>
           <Select v-model="form.nature" :options="natures" option-label="label" option-value="value" />
         </div>
-        <div class="field">
+        <div class="u-field">
           <label>Visibilité</label>
           <Select v-model="form.visibilite" :options="visibilites" option-label="label" option-value="value" />
         </div>
       </div>
-      <div class="row">
-        <div class="field">
+      <div class="u-row">
+        <div class="u-field">
           <label>Prix (centimes)</label>
           <InputNumber v-model="form.prix_cents" :min="0" />
         </div>
-        <div class="field">
+        <div class="u-field">
           <label>Stock</label>
           <InputNumber v-model="form.stock" :min="0" />
         </div>
@@ -215,12 +215,12 @@ onMounted(charger);
         <label><Checkbox v-model="form.shippable" :binary="true" /> Expédiable</label>
         <label v-if="!editing"><Checkbox v-model="form.est_saisonnier" :binary="true" /> Saisonnier</label>
       </div>
-      <div v-if="!editing && form.est_saisonnier" class="row">
-        <div class="field">
+      <div v-if="!editing && form.est_saisonnier" class="u-row">
+        <div class="u-field">
           <label>Mois début (1-12)</label>
           <InputNumber v-model="form.mois_debut" :min="1" :max="12" />
         </div>
-        <div class="field">
+        <div class="u-field">
           <label>Mois fin (1-12)</label>
           <InputNumber v-model="form.mois_fin" :min="1" :max="12" />
         </div>
@@ -234,10 +234,6 @@ onMounted(charger);
 </template>
 
 <style scoped>
-.head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-.form { display: flex; flex-direction: column; gap: .8rem; }
-.field { display: flex; flex-direction: column; gap: .3rem; flex: 1; }
-.row { display: flex; gap: .75rem; }
 .checks { display: flex; gap: 1rem; }
 .checks label { display: inline-flex; align-items: center; gap: .35rem; }
 </style>

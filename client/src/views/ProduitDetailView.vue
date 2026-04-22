@@ -145,14 +145,7 @@ onMounted(charger);
 .title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
 .title-row h1 { margin: 0; font-size: 1.8rem; }
 .tags { display: flex; gap: .4rem; flex-wrap: wrap; }
-.hero {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: .5rem;
-  margin-bottom: 1rem;
-  background: var(--p-surface-100);
-}
+.hero { width: 100%; max-height: 380px; object-fit: cover; border-radius: .5rem; margin-bottom: 1rem; background: var(--p-surface-100); }
 .description { font-size: 1rem; color: var(--p-text-color); line-height: 1.5; }
 .meta { display: grid; grid-template-columns: auto 1fr; gap: .5rem 1.5rem; margin-top: 1rem; }
 .meta dt { color: var(--p-text-muted-color); font-weight: 600; }

@@ -14,7 +14,7 @@ import { RouterLink } from 'vue-router';
     </div>
   </section>
 
-  <section class="tiles">
+  <section class="u-card-grid">
     <Card>
       <template #title>Circuits courts</template>
       <template #content>De la ferme au panier, sans intermédiaire.</template>
@@ -31,12 +31,8 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-.hero {
-  padding: 3rem 0 2rem;
-  text-align: center;
-}
+.hero { padding: 3rem 0 2rem; text-align: center; }
 .hero h1 { font-size: 2.2rem; margin: 0 0 .8rem; }
 .hero p  { color: var(--p-text-muted-color); max-width: 42rem; margin: 0 auto 1.5rem; }
 .cta { display: flex; gap: .75rem; justify-content: center; }
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1rem; margin-top: 2rem; }
 </style>

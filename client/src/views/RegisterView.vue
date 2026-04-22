@@ -51,38 +51,38 @@ async function submit() {
   <Card class="auth-card">
     <template #title>Créer un compte</template>
     <template #content>
-      <form @submit.prevent="submit" class="form">
+      <form @submit.prevent="submit" class="u-form">
         <Message v-if="errorMsg" severity="error" :closable="false">{{ errorMsg }}</Message>
 
         <SelectButton v-model="role" :options="roleOptions" option-label="label" option-value="value" />
 
-        <div class="grid">
-          <div class="field">
+        <div class="u-row">
+          <div class="u-field">
             <label for="prenom">Prénom</label>
             <InputText id="prenom" v-model="prenom" required />
           </div>
-          <div class="field">
+          <div class="u-field">
             <label for="nom">Nom</label>
             <InputText id="nom" v-model="nom" required />
           </div>
         </div>
 
-        <div class="field">
+        <div class="u-field">
           <label for="email">Email</label>
           <InputText id="email" v-model="email" type="email" autocomplete="email" required />
         </div>
 
-        <div class="field">
+        <div class="u-field">
           <label for="pwd">Mot de passe (10 caractères min.)</label>
           <Password id="pwd" v-model="password" toggle-mask autocomplete="new-password" required fluid />
         </div>
 
-        <div class="field">
+        <div class="u-field">
           <label for="tel">Téléphone</label>
           <InputText id="tel" v-model="tel" required placeholder="+33 6 12 34 56 78" />
         </div>
 
-        <div v-if="role === 'user'" class="field">
+        <div v-if="role === 'user'" class="u-field">
           <label for="adresse">Adresse de livraison</label>
           <Textarea id="adresse" v-model="adresse" rows="2" required />
         </div>
@@ -95,7 +95,4 @@ async function submit() {
 
 <style scoped>
 .auth-card { max-width: 32rem; margin: 2rem auto; }
-.form { display: flex; flex-direction: column; gap: 1rem; }
-.field { display: flex; flex-direction: column; gap: 0.3rem; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 </style>

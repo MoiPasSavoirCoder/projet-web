@@ -79,7 +79,7 @@ onMounted(chargerListes);
 </script>
 
 <template>
-  <header class="head">
+  <header class="u-hrow">
     <h2>Liste de courses</h2>
     <div class="ctl">
       <Select v-model="listeActive" :options="listes" option-label="nom" option-value="id" placeholder="Choisir une liste…" @change="chargerItems" />
@@ -106,7 +106,7 @@ onMounted(chargerListes);
     </Column>
   </DataTable>
 
-  <div v-if="items.length > 0" class="totaux">
+  <div v-if="items.length > 0" class="u-totaux">
     <span>Estimation</span>
     <strong>{{ formatPrix(totalCents) }}</strong>
   </div>
@@ -127,9 +127,7 @@ onMounted(chargerListes);
 </template>
 
 <style scoped>
-.head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap; }
 .ctl { display: flex; gap: .5rem; align-items: center; }
-.totaux { display: flex; justify-content: flex-end; gap: .5rem; margin-top: 1rem; }
 .opt { margin-top: 1.5rem; }
 .opt-body { margin-top: 1rem; }
 .opt-body ol { margin: .5rem 0 0 1.2rem; }

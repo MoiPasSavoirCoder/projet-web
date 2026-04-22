@@ -77,7 +77,7 @@ onMounted(charger);
     </Column>
     <Column header="Actions" style="width: 20rem">
       <template #body="{ data }">
-        <div class="actions">
+        <div class="u-actions">
           <Button v-if="data.statut === 'pending'" icon="pi pi-check" label="Accepter" size="small" severity="success"
                   @click="patchStatut(data, 'accepted', 'acceptée')" />
           <Button v-if="data.statut === 'pending'" icon="pi pi-times" label="Refuser" size="small" severity="danger" outlined
@@ -95,7 +95,3 @@ onMounted(charger);
     </Column>
   </DataTable>
 </template>
-
-<style scoped>
-.actions { display: flex; gap: .4rem; flex-wrap: wrap; }
-</style>

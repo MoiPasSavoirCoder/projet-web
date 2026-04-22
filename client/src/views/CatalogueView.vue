@@ -98,7 +98,7 @@ onMounted(charger);
 <template>
   <h2>Catalogue</h2>
 
-  <div class="filtres">
+  <div class="u-toolbar">
     <InputText v-model="filtres.q" placeholder="Rechercher…" class="search" />
     <Select v-model="filtres.nature" :options="natures" option-label="label" option-value="value" placeholder="Nature" />
     <ToggleButton v-model="filtres.bio" on-label="Bio" off-label="Tous" on-icon="pi pi-check" off-icon="pi pi-circle" />
@@ -106,7 +106,7 @@ onMounted(charger);
 
   <DataView :value="produits" :loading="loading" layout="grid">
     <template #empty>
-      <p class="empty">Aucun produit ne correspond aux critères.</p>
+      <p class="u-empty">Aucun produit ne correspond aux critères.</p>
     </template>
     <template #grid="slotProps">
       <div class="grid">
@@ -144,43 +144,11 @@ onMounted(charger);
 </template>
 
 <style scoped>
-.filtres {
-  display: flex;
-  gap: .75rem;
-  margin-bottom: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
 .search { flex: 1 1 18rem; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-  gap: 1rem;
-}
-.card {
-  background: var(--p-content-background);
-  border: 1px solid var(--p-content-border-color);
-  border-radius: .6rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
-  overflow: hidden;
-}
-.thumb-link {
-  display: block;
-  margin: -1rem -1rem 0;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--p-surface-100);
-}
-.thumb {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .3s ease;
-}
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: 1rem; }
+.card { background: var(--p-content-background); border: 1px solid var(--p-content-border-color); border-radius: .6rem; padding: 1rem; display: flex; flex-direction: column; gap: .6rem; overflow: hidden; }
+.thumb-link { display: block; margin: -1rem -1rem 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--p-surface-100); }
+.thumb { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
 .thumb-link:hover .thumb { transform: scale(1.04); }
 .card header { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
 .head-actions { display: flex; align-items: center; gap: .25rem; }
@@ -191,5 +159,4 @@ onMounted(charger);
 .card .meta { color: var(--p-text-muted-color); font-size: .85rem; margin: 0; line-height: 1.5; }
 .card footer { display: flex; justify-content: space-between; align-items: center; }
 .prix { font-weight: 700; font-size: 1.1rem; color: var(--p-primary-color); }
-.empty { text-align: center; padding: 3rem; color: var(--p-text-muted-color); }
 </style>

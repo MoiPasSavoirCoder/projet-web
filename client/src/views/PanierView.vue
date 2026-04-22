@@ -55,7 +55,7 @@ function passerCommande() {
         </Column>
       </DataTable>
 
-      <div class="totaux">
+      <div class="u-totaux">
         <span>Total articles :</span>
         <strong>{{ formatPrix(total) }}</strong>
       </div>
@@ -69,16 +69,5 @@ function passerCommande() {
 </template>
 
 <style scoped>
-.totaux {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 1rem;
-  font-size: 1.1rem;
-}
-.actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-}
+.actions { display: flex; justify-content: space-between; margin-top: 1.5rem; }
 </style>

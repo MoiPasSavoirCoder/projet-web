@@ -35,7 +35,7 @@ onMounted(charger);
   <Message v-else-if="!loading && favoris.length === 0" severity="info" :closable="false">
     Aucun favori pour l'instant. Ajoutez-en depuis la fiche d'un producteur.
   </Message>
-  <div class="grid">
+  <div class="u-card-grid">
     <Card v-for="f in favoris" :key="f.entreprise_id">
       <template #title>{{ f.entreprise_nom }}</template>
       <template #content>
@@ -47,7 +47,3 @@ onMounted(charger);
     </Card>
   </div>
 </template>
-
-<style scoped>
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); gap: 1rem; margin-top: 1rem; }
-</style>

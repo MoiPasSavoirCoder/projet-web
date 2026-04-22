@@ -37,7 +37,7 @@ function supprimerCompte() {
 <template>
   <h2>Mon compte</h2>
 
-  <Card v-if="session.user" class="section">
+  <Card v-if="session.user" class="u-section">
     <template #title>Informations</template>
     <template #content>
       <p><strong>Email :</strong> {{ session.user.email }}</p>
@@ -55,7 +55,6 @@ function supprimerCompte() {
 </template>
 
 <style scoped>
-.section { margin-bottom: 1rem; }
 .danger-zone { border: 1px solid var(--p-red-200); }
 .danger-title { color: var(--p-red-600); }
 </style>

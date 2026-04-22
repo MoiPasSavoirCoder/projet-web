@@ -126,10 +126,10 @@ onMounted(fetchQuote);
   </Message>
 
   <template v-else>
-    <Card class="section">
+    <Card class="u-section">
       <template #title>1. Récapitulatif</template>
       <template #content>
-        <ul class="lignes">
+        <ul class="u-lignes">
           <li v-for="l in panier.lignes" :key="l.produit_id">
             <span>{{ l.quantite }} × {{ l.nom }}</span>
             <span>{{ formatPrix(l.quantite * l.prix_cents) }}</span>
@@ -142,7 +142,7 @@ onMounted(fetchQuote);
       </template>
     </Card>
 
-    <Card class="section">
+    <Card class="u-section">
       <template #title>2. Mode de livraison</template>
       <template #content>
         <div v-if="loadingQuote" class="loading"><ProgressSpinner style="width: 2rem" /></div>
@@ -177,14 +177,14 @@ onMounted(fetchQuote);
       </template>
     </Card>
 
-    <Card class="section">
+    <Card class="u-section">
       <template #title>3. Paiement <small class="dev-tag">simulé — aucun débit réel</small></template>
       <template #content>
         <Message severity="info" :closable="false">
           Démo : <code>…0000</code> → refusé, <code>…0001</code> → erreur réseau, sinon succès après 1,5 s.
         </Message>
-        <div class="form">
-          <div class="field">
+        <div class="u-form">
+          <div class="u-field carte">
             <label for="carte">Numéro de carte</label>
             <InputMask id="carte" v-model="carte" mask="9999 9999 9999 9999" placeholder="1234 5678 9012 3456" />
           </div>
@@ -205,10 +205,7 @@ onMounted(fetchQuote);
 </template>
 
 <style scoped>
-.section { margin-bottom: 1rem; }
-.lignes { list-style: none; padding: 0; margin: 0; }
-.lignes li { display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid var(--p-content-border-color); }
-.total-row { display: flex; justify-content: space-between; margin-top: 0.8rem; font-size: 1.05rem; }
+.total-row { display: flex; justify-content: space-between; margin-top: .8rem; font-size: 1.05rem; }
 .loading { display: flex; justify-content: center; padding: 1rem; }
 .modes { display: flex; flex-direction: column; gap: .6rem; }
 .mode-card { display: flex; align-items: flex-start; gap: .75rem; padding: .75rem; border: 1px solid var(--p-content-border-color); border-radius: .5rem; cursor: pointer; }
@@ -219,8 +216,8 @@ onMounted(fetchQuote);
 .mode-head strong { flex: 1; }
 .motif { color: var(--p-red-600); }
 .detail-mode { margin-top: 1rem; display: flex; flex-direction: column; gap: .3rem; }
-.form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
-.field { display: flex; flex-direction: column; gap: .3rem; max-width: 20rem; }
+.u-form { margin-top: 1rem; }
+.carte { max-width: 20rem; }
 .dev-tag { color: var(--p-text-muted-color); font-weight: 400; font-size: .85rem; margin-left: .4rem; }
 .port { font-weight: 600; }
 </style>

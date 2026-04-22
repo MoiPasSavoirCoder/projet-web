@@ -38,15 +38,15 @@ async function submit() {
   <Card class="auth-card">
     <template #title>Connexion</template>
     <template #content>
-      <form @submit.prevent="submit" class="form">
+      <form @submit.prevent="submit" class="u-form">
         <Message v-if="errorMsg" severity="error" :closable="false">{{ errorMsg }}</Message>
 
-        <div class="field">
+        <div class="u-field">
           <label for="email">Email</label>
           <InputText id="email" v-model="email" type="email" autocomplete="email" required autofocus />
         </div>
 
-        <div class="field">
+        <div class="u-field">
           <label for="pwd">Mot de passe</label>
           <Password id="pwd" v-model="password" :feedback="false" toggle-mask autocomplete="current-password" required fluid />
         </div>
@@ -59,6 +59,4 @@ async function submit() {
 
 <style scoped>
 .auth-card { max-width: 28rem; margin: 2rem auto; }
-.form { display: flex; flex-direction: column; gap: 1rem; }
-.field { display: flex; flex-direction: column; gap: 0.3rem; }
 </style>

@@ -41,15 +41,15 @@ onMounted(charger);
 <template>
   <h2>Signaler un dysfonctionnement</h2>
 
-  <Card class="section">
+  <Card class="u-section">
     <template #title>Nouvelle alerte</template>
     <template #content>
-      <div class="form">
-        <div class="field">
+      <div class="u-form form">
+        <div class="u-field">
           <label>Type</label>
           <Select v-model="form.type" :options="types" option-label="label" option-value="value" />
         </div>
-        <div class="field">
+        <div class="u-field">
           <label>Description</label>
           <Textarea v-model="form.description" rows="4" placeholder="Décrivez le problème rencontré…" />
         </div>
@@ -58,7 +58,7 @@ onMounted(charger);
     </template>
   </Card>
 
-  <Card class="section">
+  <Card class="u-section">
     <template #title>Mes alertes</template>
     <template #content>
       <Message v-if="alertes.length === 0" severity="info" :closable="false">Aucune alerte envoyée.</Message>
@@ -77,7 +77,5 @@ onMounted(charger);
 </template>
 
 <style scoped>
-.section { margin-bottom: 1rem; }
-.form { display: flex; flex-direction: column; gap: 1rem; max-width: 40rem; }
-.field { display: flex; flex-direction: column; gap: .3rem; }
+.form { max-width: 40rem; }
 </style>

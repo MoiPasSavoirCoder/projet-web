@@ -65,7 +65,7 @@ watch(onlyOpen, chargerLieux);
 <template>
   <h2>Carte des producteurs et points relais</h2>
 
-  <div class="controls">
+  <div class="u-toolbar">
     <ToggleButton v-model="onlyOpen" on-label="Ouverts maintenant" off-label="Tous les lieux" on-icon="pi pi-clock" off-icon="pi pi-map-marker" />
     <div class="legende">
       <span><span class="dot" style="background:#15803d" /> Lieu de vente</span>
@@ -82,24 +82,10 @@ watch(onlyOpen, chargerLieux);
 </template>
 
 <style>
-.gumes-marker .pin {
-  display: block;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 2px rgba(0,0,0,.5);
-}
+.gumes-marker .pin { display: block; width: 18px; height: 18px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 2px rgba(0,0,0,.5); }
 </style>
 
 <style scoped>
-.controls {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: .75rem;
-  flex-wrap: wrap;
-}
 .legende { display: flex; gap: 1rem; font-size: .9rem; color: var(--p-text-muted-color); }
 .legende span { display: inline-flex; align-items: center; gap: .3rem; }
 .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 1px rgba(0,0,0,.5); }
